@@ -9,19 +9,18 @@ import pandas as pd
 from langchain.llms import OpenAI
 from langchain_experimental.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 
-# Set your OpenAI API key
-os.environ['OPENAI_API_KEY'] = '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'
+# Access the OpenAI API key from the environment variable
+openai_api_key = os.environ.get('OPENAI_API_KEY')
 
 def create_agent(filename: str):
-    # Create an OpenAI object.
-    llm = OpenAI(openai_api_key=os.environ['OPENAI_API_KEY'])  # Use the environment variable for the API key
+  # Create an OpenAI object using the environment variable
+  llm = OpenAI(openai_api_key=openai_api_key)
 
-    # Read the CSV file into a Pandas DataFrame.
-    df = pd.read_csv(r'C:\Users\nande\Downloads\churn-dataset.csv')
+  # Read the CSV file into a Pandas DataFrame.
+  df = pd.read_csv(r'C:\Users\nande\Downloads\churn-dataset.csv')
 
-    # Create a Pandas DataFrame agent.
-    return create_pandas_dataframe_agent(llm, df, verbose=False)
-
+  # Create a Pandas DataFrame agent.
+  return create_pandas_dataframe_agent(llm, df, verbose=True)
 
 # In[2]:
 
