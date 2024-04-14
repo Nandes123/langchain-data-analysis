@@ -6,7 +6,6 @@
 
 import os
 import pandas as pd
-from config import OPENAI_API_KEY
 from langchain.llms import OpenAI
 from langchain_experimental.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 
