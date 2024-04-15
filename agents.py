@@ -3,7 +3,7 @@
 
 # In[1]:
 
-import streamlit
+import streamlit as st
 import os
 import pandas as pd
 from langchain.llms import OpenAI
