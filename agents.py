@@ -2,15 +2,14 @@
 # coding: utf-8
 
 # In[1]:
-
-import streamlit as st
+ 
 import os
 import pandas as pd
 from langchain.llms import OpenAI
 from langchain_experimental.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 
 # Access the OpenAI API key from the environment variable
-openai_api_key = st.secrets['OPENAI_API_KEY'] 
+openai_api_key = os.environ.get('OPENAI_API_KEY')
 
 def create_agent(filename: str):
   # Create an OpenAI object using the environment variable
